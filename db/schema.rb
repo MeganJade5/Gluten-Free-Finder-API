@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_12_223609) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_12_231255) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -26,6 +26,24 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_12_223609) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "posts", force: :cascade do |t|
+    t.string "restaurant_name"
+    t.string "street_number"
+    t.string "street_name"
+    t.string "suburb"
+    t.integer "postcode"
+    t.string "description"
+    t.bigint "user_id", null: false
+    t.bigint "cuisine_id", null: false
+    t.bigint "food_prep_id", null: false
+    t.boolean "live_status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["cuisine_id"], name: "index_posts_on_cuisine_id"
+    t.index ["food_prep_id"], name: "index_posts_on_food_prep_id"
+    t.index ["user_id"], name: "index_posts_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email"
     t.string "password_digest"
@@ -34,4 +52,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_12_223609) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "posts", "cuisines"
+  add_foreign_key "posts", "food_preps"
+  add_foreign_key "posts", "users"
 end
