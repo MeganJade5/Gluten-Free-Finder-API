@@ -8,5 +8,14 @@ GET http://localhost:3000/food_preps
 
 GET http://localhost:3000/posts
 
+###
+
+# Post with valid ID
+GET http://localhost:3000/posts/1
+
+###
+
+# Post with invalid ID
+GET http://localhost:3000/posts/999
 
 
