@@ -6,7 +6,7 @@ class CreatePosts < ActiveRecord::Migration[7.0]
       t.string :street_name
       t.string :suburb
       t.integer :postcode
-      t.string :description
+      t.text :description
       t.references :user, null: false, foreign_key: true
       t.references :cuisine, null: false, foreign_key: true
       t.references :food_prep, null: false, foreign_key: true

@@ -32,7 +32,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_12_231255) do
     t.string "street_name"
     t.string "suburb"
     t.integer "postcode"
-    t.string "description"
+    t.text "description"
     t.bigint "user_id", null: false
     t.bigint "cuisine_id", null: false
     t.bigint "food_prep_id", null: false
