@@ -20,6 +20,23 @@ GET http://localhost:3000/posts/999
 
 ###
 
+# Edit post 15
+PUT http://localhost:3000/posts/15
+Content-Type: application/json
+Authorization: "Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NjgzMzA1NTJ9.-izCtoBrucECFiQET1L_8ScOvXW16vwA8BUZDnorQBc"
+    
+    {
+        "restaurant_name": "Authenticated post",
+        "description": "Edited here"
+    }
+###
+
+# delete post 15
+DELETE http://localhost:3000/posts/15
+Authorization: "Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NjgzMzA1NTJ9.-izCtoBrucECFiQET1L_8ScOvXW16vwA8BUZDnorQBc"
+
+####
+
 # create post without token
 POST http://localhost:3000/posts
 Content-Type: application/json

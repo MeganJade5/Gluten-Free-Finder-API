@@ -19,6 +19,6 @@ class ApplicationController < ActionController::API
     end
     
     def extract_token_from_auth_headers
-        request.headers["Authorization"] && request.headers["Authorization"].split(" ")[1]
+        request.headers["Authorization"]&.split(" ")&.last
     end
 end

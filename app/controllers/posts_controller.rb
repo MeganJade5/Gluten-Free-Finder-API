@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
-    before_action :set_post, only: [:show]
+    before_action :set_post, only: [:show, :update, :destroy]
     before_action :authenticate, only: [:create, :updated, :destroy]
+    before_action :authorize, only: [:update, :destroy]
 
     def index
         posts = Post.all.includes(:user, :cuisine, :food_prep)
@@ -13,11 +14,18 @@ class PostsController < ApplicationController
 
     def create
         post = current_user.posts.create(post_params)
-        unless post.errors.any?
-            render json: post, include: {cuisine: {only: :name}, food_prep: {only: :name}, user: {only: :email}}, status: 201
-        else
-            render json: {errors: post.errors.full_messages}, status: 422
-        end
+        render_post(post)
+    end
+
+    def update
+        @post.update(post_params)
+        render_post(post)
+    end
+
+    def destroy
+        attributes = @post.attributes
+        @post.destroy
+        render json: attributes, status: 202
     end
 
     private
@@ -32,5 +40,18 @@ class PostsController < ApplicationController
 
     def post_params
         params.require(:post).permit(:restaurant_name, :street_number, :street_name, :suburb, :postcode, :description, :cuisine_id, :food_prep_id, :live_status, :image)
+    end
+
+    # change this to admin
+    def authorize
+        render json: {error: "You don't have permission to do that"}, status: 401 unless current_user.id == @post.user_id
+    end
+
+    def render_post(post)
+        unless post.errors.any?
+            render json: post, include: {cuisine: {only: :name}, food_prep: {only: :name}, user: {only: :email}}, status: 201
+        else
+            render json: {errors: post.errors.full_messages}, status: 422
+        end
     end
 end

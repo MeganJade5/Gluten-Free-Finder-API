@@ -8,6 +8,9 @@ Rails.application.routes.draw do
   get "/posts", to: "posts#index", as: "posts"
   post "/posts", to: "post#create"
   get "/posts/:id", to: "posts#show", as: "post"
+  put "/posts/:id", to: "posts#update"
+  patch "/posts/:id", to: "posts#update"
+  delete "/posts/:id", to: "posts#destroy"
   post "/auth/signin", to: "auth#signin", as: "signin"
   post "/auth/signup", to: "auth#signup", as: "signup"
 
