@@ -10,7 +10,7 @@ class CreatePosts < ActiveRecord::Migration[7.0]
       t.references :user, null: false, foreign_key: true
       t.references :cuisine, null: false, foreign_key: true
       t.references :food_prep, null: false, foreign_key: true
-      t.boolean :live_status
+      t.boolean :live_status, default: false
 
       t.timestamps
     end

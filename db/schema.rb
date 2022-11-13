@@ -36,7 +36,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_12_231255) do
     t.bigint "user_id", null: false
     t.bigint "cuisine_id", null: false
     t.bigint "food_prep_id", null: false
-    t.boolean "live_status"
+    t.boolean "live_status", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["cuisine_id"], name: "index_posts_on_cuisine_id"
@@ -47,7 +47,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_12_231255) do
   create_table "users", force: :cascade do |t|
     t.string "email"
     t.string "password_digest"
-    t.boolean "restaurant_owner_accepted"
+    t.boolean "restaurant_owner_accepted", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
