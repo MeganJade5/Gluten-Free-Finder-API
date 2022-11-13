@@ -18,4 +18,57 @@ GET http://localhost:3000/posts/1
 # Post with invalid ID
 GET http://localhost:3000/posts/999
 
+###
+
+# login with correct details
+POST http://localhost:3000/auth/signin
+Content-Type: application/json
+
+{
+    "auth":{
+    "email": "megan@test.com", 
+    "password": "password1234"
+    }
+}
+
+###
+# login with incorrect details
+POST http://localhost:3000/auth/signin
+Content-Type: application/json
+
+{
+    "auth":{
+    "email": "megan@test.com", 
+    "password": "wrongpasswor"
+    }
+}
+
+###
+
+# signup with correct details
+POST http://localhost:3000/auth/signup
+Content-Type: application/json
+
+{
+    "auth":{
+    "email": "megan2@test.com", 
+    "password": "password1",
+    "password_confirmation": "password1"
+    }
+}
+
+###
+# signup with already used details
+POST http://localhost:3000/auth/signup
+Content-Type: application/json
+
+{
+    "auth":{
+    "email": "megan2@test.com", 
+    "password": "password",
+    "password_confirmation": "password"
+    }
+}
+
+###
 
