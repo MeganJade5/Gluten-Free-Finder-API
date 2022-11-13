@@ -1,14 +1,14 @@
 FactoryBot.define do
   factory :post do
-    restaurant_name { "MyString" }
-    street_number { "MyString" }
-    street_name { "MyString" }
-    suburb { "MyString" }
+    association :user, factory: :user
+    association :cuisine
+    association :food_prep
+    restaurant_name { "post" }
+    street_number { "1A" }
+    street_name { "Road" }
+    suburb { "Sydney" }
     postcode { 1 }
-    description { nil }
-    user { nil }
-    cuisine { nil }
-    food_prep { nil }
+    description { "testing here" }
     live_status { false }
   end
 end
