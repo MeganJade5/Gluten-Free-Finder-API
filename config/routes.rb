@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get "/cuisines", to: "cuisines#index", as: "cuisines"
   get "/food_preps", to: "food_preps#index", as: "food_preps"
   get "/posts", to: "posts#index", as: "posts"
+  post "/posts", to: "post#create"
   get "/posts/:id", to: "posts#show", as: "post"
   post "/auth/signin", to: "auth#signin", as: "signin"
   post "/auth/signup", to: "auth#signup", as: "signup"

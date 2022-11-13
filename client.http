@@ -20,6 +20,45 @@ GET http://localhost:3000/posts/999
 
 ###
 
+# create post without token
+POST http://localhost:3000/posts
+Content-Type: application/json
+
+{
+    "restaurant_name": "not authenticated",
+    "street_number": "1a",
+    "street_name": "bad street",
+    "suburb": "bad suburb",
+    "postcode": "2000",
+    "description": "description badly written here",
+    "live_status": false,
+    "cuisine_id": 1,
+    "food_prep_id": 1
+
+}
+
+###
+
+# create post with token
+POST http://localhost:3000/posts
+Content-Type: application/json
+Authorization: "Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NjgzMTc3MzF9.vnfanENBu4v-ql9kaG3tf_-ix007rFJ6S_MpoBOU3Ss"
+
+{
+    "restaurant_name": "I am authenticated",
+    "street_number": "1a",
+    "street_name": "good street",
+    "suburb": "good suburb",
+    "postcode": "2000",
+    "description": "description here",
+    "live_status": false,
+    "cuisine_id": 1,
+    "food_prep_id": 1
+
+}
+
+###
+
 # login with correct details
 POST http://localhost:3000/auth/signin
 Content-Type: application/json
