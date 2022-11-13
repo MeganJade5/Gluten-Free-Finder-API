@@ -1,0 +1,6 @@
+GET http://localhost:3000/cuisines
+
+# GET http://localhost:3000/food_preps
+
+
+
