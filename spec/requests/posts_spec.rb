@@ -54,12 +54,12 @@ RSpec.describe "Posts", type: :request do
 
       it "should respond with postcode" do
         pp response.body
-        expect(response.body).to include(1)
+        expect(response.body).to include('1')
       end
 
       it "should respond with live status" do
         pp response.body
-        expect(response.body).to include(false)
+        expect(response.body).to include('false')
       end
 
     # invalid post id 
@@ -115,7 +115,7 @@ RSpec.describe "Posts", type: :request do
       end
 
       it "should increase post count by 1" do
-        expect(Post.count).to_be @post_count + 1
+        expect(Post.count).to eq @post_count + 1
       end
 
       it "should contain post content" do
@@ -125,9 +125,10 @@ RSpec.describe "Posts", type: :request do
       end
   end
 
-  # without token and unsuccessful 
-  context "without token" do
+  # without valid token and unsuccessful 
+  context "without valid token" do
       before(:each) do
+        token = ""
 
         post "/posts", headers: {Authorization: "Bearer #{token}"}, params: {post:
           {restaurant_name: "cafe 1",
@@ -146,7 +147,7 @@ RSpec.describe "Posts", type: :request do
       end
 
       it "should not increase post count by 1" do
-        expect(Post.count).to_be @post_count
+        expect(Post.count).to eq @post_count
       end
 
       it "should contain post content" do

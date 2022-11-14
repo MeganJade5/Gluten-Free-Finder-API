@@ -18,16 +18,16 @@ end
 
 if Post.count == 0
     15.times do
-        Post.create(
+        Post.create!(
             restaurant_name: Faker::Lorem.words(number:3).join(" "),
             street_number: rand(5) + 1,
             street_name: Faker::Lorem.words(number:3).join(" "),
             suburb: Faker::Lorem.words(number:1).join(" "),
             postcode: rand(5) + 1,
             description: Faker::Lorem.paragraph_by_chars(number:20, supplemental: false),
-            user_id: rand(5) + 1,
-            cuisine_id: rand(5) + 1,
-            food_prep_id: rand(5) + 1,
+            user_id: 1,
+            cuisine_id: rand(2) + 1,
+            food_prep_id: rand(2) + 1,
         )
     end
     puts "created posts"
