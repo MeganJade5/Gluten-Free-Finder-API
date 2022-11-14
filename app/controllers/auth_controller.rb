@@ -5,7 +5,7 @@ class AuthController < ApplicationController
         # if have user - with shorhand syntax
         if user&.authenticate(auth_params[:password])
             token = JwtService.encode(user)
-            render json: {jwt: token, email:user.email}
+            render json: {jwt: token, email:user.email, role:user.role}
         else
             render json: {error: "Incorrect email or password"}, status: 422
         end
@@ -15,7 +15,7 @@ class AuthController < ApplicationController
         user = User.create(auth_params )
         unless user.errors.any?
             token = JwtService.encode(user)
-            render json: {jwt: token, email:user.email} , status: 201
+            render json: {jwt: token, email:user.email, role:user.role} , status: 201
         else
             render json: {errors: user.errors.full_messages}, status: 422
         end
@@ -25,6 +25,6 @@ class AuthController < ApplicationController
 
 
     def auth_params
-        params.require(:auth).permit(:auth, :email, :password, :password_confirmation)
+        params.require(:auth).permit(:auth, :email, :password, :password_confirmation, :role)
     end
 end
