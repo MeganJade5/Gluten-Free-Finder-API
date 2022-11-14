@@ -38,7 +38,7 @@ if User.count == 0
     puts "created user"
 end
 
-# User.first_or_create(email: 'admin@glutenfreefinder.com',
-#     password: 'admin123',
-#     password_confirmation: 'admin123',
-#     role: User.roles[:admin])
+User.create(email: 'admin@glutenfreefinder.com',
+    password: 'admin123',
+    password_confirmation: 'admin123',
+    role: User.roles[:admin])
