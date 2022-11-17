@@ -3,17 +3,27 @@ class PostsController < ApplicationController
     before_action :authenticate, only: [:create, :updated, :destroy]
     before_action :authorize, only: [:update, :destroy]
 
+# def index
+#     posts = Post.all.includes(:user, :cuisine, :food_prep)
+#     render json: posts.map {|post|
+#         post.as_json(
+#             include: {
+#                 cuisine: {only: :name}, 
+#                 food_prep: {only: :name}, 
+#                 user: {only: :email}
+#             }.merge(image_path: url_for(post.image)), 
+#             status: 200
+#         )
+#     }
+        
+# end
+
     def index
         posts = Post.all.includes(:user, :cuisine, :food_prep)
-        render json: posts.map do {|post|
-            post.as_json(
-                include: {cuisine: {only: :name}, 
-                food_prep: {only: :name}, 
-                user: {only: :email}}.merge(image_path: url_for(post.image)), status: 200}
+        render json: PostSerializer.new(@post).serializable_hash[:data][:attributes], status: 200
     end
 
     def show
-        render json: @post, include: {cuisine: {only: :name}, food_prep: {only: :name}, user: {only: :email}}.merge(image_path: url_for(post.image)), status: 200
     end
 
     def create
