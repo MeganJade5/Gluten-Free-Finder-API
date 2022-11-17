@@ -16,6 +16,11 @@ if FoodPrep.count == 0
     end
 end
 
+if User.count == 0
+    User.create(email: "megan@test.com", password: "password1234", password_confirmation: "password1234")
+    puts "created user"
+end
+
 if Post.count == 0
     15.times do
         Post.create!(
@@ -31,11 +36,6 @@ if Post.count == 0
         )
     end
     puts "created posts"
-end
-
-if User.count == 0
-    User.create(email: "megan@test.com", password: "password1234", password_confirmation: "password1234")
-    puts "created user"
 end
 
 User.create(email: 'admin@glutenfreefinder.com',
