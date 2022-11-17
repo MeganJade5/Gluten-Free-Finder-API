@@ -8,4 +8,7 @@ class Post < ApplicationRecord
   validates :suburb, presence: true
   validates :postcode, presence: true
   validates :description, presence: true
+
+  has_one_attached :image
+
 end

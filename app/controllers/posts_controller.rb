@@ -5,11 +5,15 @@ class PostsController < ApplicationController
 
     def index
         posts = Post.all.includes(:user, :cuisine, :food_prep)
-        render json: posts, include: {cuisine: {only: :name}, food_prep: {only: :name}, user: {only: :email}}, status: 200
+        render json: posts.map do {|post|
+            post.as_json(
+                include: {cuisine: {only: :name}, 
+                food_prep: {only: :name}, 
+                user: {only: :email}}.merge(image_path: url_for(post.image)), status: 200}
     end
 
     def show
-        render json: @post, include: {cuisine: {only: :name}, food_prep: {only: :name}, user: {only: :email}}, status: 200
+        render json: @post, include: {cuisine: {only: :name}, food_prep: {only: :name}, user: {only: :email}}.merge(image_path: url_for(post.image)), status: 200
     end
 
     def create
