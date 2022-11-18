@@ -18,7 +18,7 @@ def index
 end
 
     def show
-        render json: @post, status: 200
+        render json: {image: @post.image.filename}, status: 200
     end
 
     def create
