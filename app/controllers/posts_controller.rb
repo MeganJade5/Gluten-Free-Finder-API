@@ -5,21 +5,20 @@ class PostsController < ApplicationController
 
 def index
     posts = Post.all.includes(:user, :cuisine, :food_prep)
-    render json: posts.map {|post|
-        post.as_json(
-            include: {
-                cuisine: {only: :name}, 
-                food_prep: {only: :name}, 
-                user: {only: :email}
-            }.merge(image_path: url_for(post.image)), 
-            status: 200
-        )
-    }
-        
+    posts = posts.map do |post|
+        post_hash = post.attributes
+        post_hash[:cuisine] = post.cuisine.name
+        post_hash[:food_prep] = post.food_prep.name
+        post_hash[:user] = post.user.email
+        post_hash[:image_path] = url_for(post.image) if post.image.attached?
+        post_hash
+      end
+  
+      render json: { posts: posts }, status: 200        
 end
 
     def show
-        render json: @post, include: {cuisine: {only: :name}, food_prep: {only: :name}, user: {only: :email}}.merge(image_path: url_for(@post.image)), status: 200
+        render json: { posts: @post }, status: 200
     end
 
     def create
