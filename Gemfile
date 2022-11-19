@@ -34,6 +34,9 @@ gem "bootsnap", require: false
 # gem "image_processing", "~> 1.2"
 gem 'activestorage'
 
+# s3 bucket storage
+gem "aws-sdk-s3", require: false
+
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 gem "rack-cors"
 
