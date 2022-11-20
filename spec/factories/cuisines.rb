@@ -1,5 +1,5 @@
 FactoryBot.define do
   factory :cuisine do
-    name { "cuisine category" }
+    name { "Australian" }
   end
 end
