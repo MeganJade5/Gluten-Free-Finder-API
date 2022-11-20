@@ -21,7 +21,7 @@ RSpec.describe "Cuisines", type: :request do
     end
 
     it "should respond with json" do
-      expect(response.body).to include("cuisine category")
+      expect(response.body).to include("Australian")
     end
   end
 end

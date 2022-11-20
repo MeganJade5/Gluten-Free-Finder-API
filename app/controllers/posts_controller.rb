@@ -18,12 +18,12 @@ def index
 end
 
     def show
-        render json: {image: @post.image.filename}, status: 200
+        render_post(@post)
     end
 
     def create
         post = current_user.posts.create(post_params)
-        render_post(post)
+        render_post(post, 201)
     end
 
     def update
@@ -48,7 +48,7 @@ end
     end
 
     def post_params
-        params.require(:post).permit(:restaurant_name, :street_number, :street_name, :suburb, :postcode, :description, :cuisine_id, :food_prep_id, :live_status, :image)
+        params.permit(:restaurant_name, :street_number, :street_name, :suburb, :postcode, :description, :cuisine_id, :food_prep_id, :live_status, :image)
     end
 
     # change this to admin
@@ -56,9 +56,14 @@ end
         render json: {error: "You don't have permission to do that"}, status: 401 unless current_user.id == @post.user_id
     end
 
-    def render_post(post)
+    def render_post(post, status=200)
         unless post.errors.any?
-            render json: post, include: {cuisine: {only: :name}, food_prep: {only: :name}, user: {only: :email}}, status: 201
+        post_hash = post.attributes
+        post_hash[:cuisine] = post.cuisine.name
+        post_hash[:food_prep] = post.food_prep.name
+        post_hash[:user] = post.user.email
+        post_hash[:image_path] = url_for(post.image) if post.image.attached?
+            render json: post_hash, status:status
         else
             render json: {errors: post.errors.full_messages}, status: 422
         end

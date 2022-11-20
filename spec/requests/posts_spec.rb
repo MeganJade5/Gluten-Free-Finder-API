@@ -22,6 +22,11 @@ RSpec.describe "Posts", type: :request do
         expect(response.content_type).to eq("application/json; charset=utf-8")
       end
 
+      it "should respond with included category" do
+        pp response.body
+        expect(response.body).to include("Australian")
+      end
+
     # invalid post id 
     context "invalid post id" do
 
@@ -51,14 +56,14 @@ RSpec.describe "Posts", type: :request do
       @post_count = Post.count
       @new_user = create(:user, email: "new@test.com")
       # not picking up category id's
-      @cuisine = create(:cuisine, name: "test")
+      @cuisine = create(:cuisine, name: "Australian")
       @food_prep = create(:food_prep, name: "test")
     end
 
     context "with token" do
       before(:each) do
         token = JwtService.encode(@new_user)
-        post "/posts", headers: {Authorization: "Bearer #{token}"}, params: {post:    
+        post "/posts", headers: {Authorization: "Bearer #{token}"}, params:    
           {restaurant_name: "cafe 1",
           street_number: "1",
           street_name: "road",
@@ -67,7 +72,7 @@ RSpec.describe "Posts", type: :request do
           description: "info here",
           live_status: false,
           cuisine_id: @cuisine.id,
-          food_prep_id: @food_prep.id}}
+          food_prep_id: @food_prep.id}
       end
       
       it "should respond with 201 created" do
@@ -90,7 +95,7 @@ RSpec.describe "Posts", type: :request do
       before(:each) do
         token = ""
 
-        post "/posts", headers: {Authorization: "Bearer #{token}"}, params: {post:
+        post "/posts", headers: {Authorization: "Bearer #{token}"}, params:
           {restaurant_name: "cafe 1",
           street_number: "1",
           street_name: "road",
@@ -99,7 +104,7 @@ RSpec.describe "Posts", type: :request do
           description: "info here",
           live_status: false,
           cuisine_id: @cuisine.id,
-          food_prep_id: @food_prep.id}}
+          food_prep_id: @food_prep.id}
       end
       
       it "should respond with 401 unauthorised" do

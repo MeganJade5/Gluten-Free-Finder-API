@@ -12,7 +12,7 @@ RSpec.describe Cuisine, type: :model do
     end
 
     it "has the right name" do
-      expect(@cuisine.name).to eq "cuisine category"
+      expect(@cuisine.name).to eq "Australian"
     end
     
   end
