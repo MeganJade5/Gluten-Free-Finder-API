@@ -2,13 +2,13 @@
 ## Megan Van Der Weide & Sofia-Bella Frugone
 
 --- 
-💎 Deployed App: 
+📣 Deployed App: 
 
 🛠 Staging Environment App: 
 
-🖥 Frontend Repo: 
+🖥 Frontend Repo: https://github.com/sofia-frugone/Gluten-Free-Finder-React
 
-🖥 Backend Repo: 
+🖥 Backend Repo: https://github.com/MeganJade5/Gluten-Free-Finder-API
 
 📖 Part A Documentation Repo: https://github.com/MeganJade5/Gluten-Free-Finder-Docs
 
@@ -83,7 +83,9 @@ Clone the app:
 To view as admin:
 
 The seed data file created an admin account for you with the following credentials to login: 
+
 email: admin@glutenfreefinder.com
+
 password: admin123
 
 ---
@@ -109,7 +111,22 @@ password: admin123
 ---
 
 ## Testing
+The application has been tested in Chrome Version 107.0.5304.110 (Official Build) (arm64) and Firefox Version 15.1 (17612.2.9.1.20) on Mac OS Monterey 12.0.1, M1. 
 
+Manual Testing Logs - [found here!](https://docs.google.com/spreadsheets/d/1c2GitubExcjdO2MHKTi4ZNrZ8e27vQepE55oi4mlJDE/edit#gid=0)
+
+These Testing Logs include the following pages:  
+1. [User Test Logs](https://docs.google.com/spreadsheets/d/1c2GitubExcjdO2MHKTi4ZNrZ8e27vQepE55oi4mlJDE/edit#gid=0)
+2. [Admin Test Logs](https://docs.google.com/spreadsheets/d/1c2GitubExcjdO2MHKTi4ZNrZ8e27vQepE55oi4mlJDE/edit#gid=2130751966)
+3. [Backend Test Logs](https://docs.google.com/spreadsheets/d/1c2GitubExcjdO2MHKTi4ZNrZ8e27vQepE55oi4mlJDE/edit#gid=473735298)
+4. [Frontend Test Logs](https://docs.google.com/spreadsheets/d/1c2GitubExcjdO2MHKTi4ZNrZ8e27vQepE55oi4mlJDE/edit#gid=1587885359)
+
+The API Backend tested using the following:
+- Rspec (please see rspec files) with 45 examples, 0 failures
+- CLIENT HTTP (please see client.http file), 13 examples, 0 failures
+  
+Screen Recordings of Evidence of Testing:
+Live Production Loom
 ---
 
 ## Libraries & Dependencies:
@@ -152,6 +169,8 @@ password: admin123
 - **Rack-cors:** supports the cross-origin resource sharing. Allows for web requests between domain and compatible front end app to request information from your Rails back end.. Together they make up Middleware that makes CORS-compatible Rack-framework applications. The gem will ensure the app is avoiding issues when the API is called from the frontend app. When a user clicking around on a front end app, those clicks send fetch requests to your Rails back end to perform tasks and collect data. Rack CORS allows this request to happen and gives you control over who can make requests and what kind of requests can be made.
 
 - **Jwt:** Used for the API security to authenticate a user. The client application sends a JSON Web Token (JWT) in the authorization header of the HTTP request to the backend API. The tokens are open, standard way to represent the user's identity securely during a two-party interaction. JWT securely transmits information between parties and allows for claims or information to be transmitted in a compact and self-contained way.
+
+- **Client HTTP Vs Code Extension:** Allows to send HTTP requests and view the response within vscode. Used to tests routing of pages, creating posts with and without tokens, and login scenarioes. 
  
 ### Testing in Development:
 
@@ -192,12 +211,22 @@ Javascript for object and string styles. It is powerful and predictable style co
 ---
 
 ## Screenshots:
-
+**Homepage**
+**Restaurant Post**
+**Sign up**
+**Sign in**
+**Create New Post**
+**Admin Dashboard**
 ---
 
 ## Project Management
 
-**Project management:** Trello, Discord, Loom Videos
+**Git Source Control**
+
+Frontend: https://github.com/sofia-frugone/Gluten-Free-Finder-React/pulse
+Backend: https://github.com/MeganJade5/Gluten-Free-Finder-API/pulse
+
+**Project management tools:** Trello, Discord, Loom Videos
 
 The project managment tool we've used to track our progress for this assesment is [Trello, which can be viewed here.](https://trello.com/b/g94algv7/t3a2-full-stack-app) We have 10 columns in our board, each of which contribute to an agile approach of product development.
 
