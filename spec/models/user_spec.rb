@@ -11,7 +11,7 @@ RSpec.describe User, type: :model do
       @user = build(:user, password: "password123")
     end
 
-    it "has a valid factory" do
+    it "hSignas a valid factory" do
       expect(@user).to be_valid
     end
 
