@@ -6,9 +6,9 @@
 
 🛠 Staging Environment App: 
 
-🖥 Client Repo: 
+🖥 Frontend Repo: 
 
-🖥 Server Repo: 
+🖥 Backend Repo: 
 
 📖 Part A Documentation Repo: https://github.com/MeganJade5/Gluten-Free-Finder-Docs
 
@@ -52,10 +52,34 @@ Clone the app:
 - Create local database `rails db:create`
 - Seed the local database `rails db:seed` to view dummy data in local application
 - Ensure you are in the application's root directory and enter the following command to run the application within your browser: `rails s`
-- The server will run on local host port 3000
+- The server will run on local host port 3000 in your browser `http://localhost:3000 `
 
 **Gluten-Free-Finder-FrontEnd**
 
+**Requirements:**
+- React ^18.2.0
+- Node ^16.15.0
+- npm ^8.5.5
+
+Installing React: 
+- Ensure React is installed by entering the following command in Terminal: npm —version
+- If a valid React version is not returned, refer to the following link to install React for your operating system https://reactjs.org/
+
+Installing package.json:
+
+- Ensure you have installed npm
+
+  
+Clone the app: 
+- Create a directory on your machine named `Gluten-Free-Finder` and `$ cd` into it.
+- Whilst in the directory, clone the repo `https://github.com/sofia-frugone/Gluten-Free-Finder-React.git`
+- `$ cd` into the folder `Gluten-Free-Finder-React`
+- install packages above
+- in the project directory run `npm start`
+- use `npm test` to view the interactive watch mode
+- The server will run on local host port 3000 in your browser `http://localhost:3000 `
+  
+**NOTE**
 To view as admin:
 
 The seed data file created an admin account for you with the following credentials to login: 
@@ -64,26 +88,23 @@ password: admin123
 
 ---
 
-### Tech Stack 
-**Front-end:** HTML, CSS, JavaScript, React, JSX, Style Framework TBD (Bootstrap, Tailwind or Material UI)
-
-**Back-end:** Rails
-
-**Database:** Postgresql
-
-**Deployment:** Heroku & Netlify
-
-**Testing:** 
-
-**Project management:** Trello, Discord
-
-**Design:** Figma, Canva, Draw.io
-
-**DevOps:** Git, Github, VS code
-
----
-
 ## API Endpoints
+**Authentication for user**
+- POST /auth/signup
+- POST /auth/signin
+- GET /auth/signout
+ 
+**Authentication for admin**
+- GET /admin
+- GET /admin/posts
+- GET /admin/show_post
+ 
+**Posts**
+- To view posts: GET /posts
+- To view individual post: GET /posts/: id 
+- To create a post: POST /posts
+- To delete a post: DELETE /posts/: id
+- To update a post: PATCH /posts/: id
 
 ---
 
@@ -93,6 +114,81 @@ password: admin123
 
 ## Libraries & Dependencies:
 
+### Stack
+**Front-end:** HTML, CSS, JavaScript, React, JSX, Material UI
+
+**Back-end:** Rails, Ruby
+
+**Database:** Postgresql
+
+**Deployment:** Heroku & Netlify
+
+**Testing:** Rspec-rails, Client HTTP (and dependencies below)
+
+**Design:** Figma, Canva, Draw.io
+
+**DevOps:** Git, Github, VS code
+
+### Backend
+
+- **Ruby 3.1.0:** programming language that is high-level and general purpose developed for productivity and simplicity. It is object driven. Used to build the backend API. It was particular helpful in creating models of the cuisine and food preparation categories which belong to the post model. 
+  
+- **Rails 7.0.4:** server side web application framework used to develop the backend api for models, controller, database structures.
+
+- **Pg 1.1:** postgresql used as the database for Active Record. It manages the relational database. It’s reliable, scalable, free, open source and allows for data integrity and extensibility which has it’s own security features for data protection. 
+
+- **puma 5.0:** management software that provides a powerful and secure storage system. It is the default server for Rails. 
+
+- **Bycrypt 3.1.7:** hash algorith used for hashing passwords. This ruby gem provides a simple wrapper for safely handling passwords. 
+
+- **Tzinfo-data:** timezone package to accompany Ruby. Used to provide timestamps on the post creation. 
+
+- **Bootsnap:** Ruby plug in which provides a method to optimize and cache. It supports our YAML files. It reduces our booting times on the app by caching expensive computations. 
+
+- **Activestorage:** facilitates uploading files to the cloud storage (Amazon s3 in below gem). It is the hosting service for Ruby. It also provides a disk service for testing or local deployments. 
+
+- **Aws-sdk-s3:** web-based cloud storage service designed for online backup and archiving of data and applications on Amazon Web Services. used for file uploading images on the site when users add a new post.
+
+- **Rack-cors:** supports the cross-origin resource sharing. Allows for web requests between domain and compatible front end app to request information from your Rails back end.. Together they make up Middleware that makes CORS-compatible Rack-framework applications. The gem will ensure the app is avoiding issues when the API is called from the frontend app. When a user clicking around on a front end app, those clicks send fetch requests to your Rails back end to perform tasks and collect data. Rack CORS allows this request to happen and gives you control over who can make requests and what kind of requests can be made.
+
+- **Jwt:** Used for the API security to authenticate a user. The client application sends a JSON Web Token (JWT) in the authorization header of the HTTP request to the backend API. The tokens are open, standard way to represent the user's identity securely during a two-party interaction. JWT securely transmits information between parties and allows for claims or information to be transmitted in a compact and self-contained way.
+ 
+### Testing in Development:
+
+- **Debug:** debugging functionality for ruby. 
+
+- **Rspec-rails:** Domain Specific Language testing tool used to test Ruby code. It is behavior driven that is used as a framework for unit testing
+
+- **Factory_bot_rails:** for testing Ruby on Rails. Accompanies Rspec in that default values can be set in FactoryBot for creating, building, and pre-filling attributes for testing. 
+Database_cleaner: cleans up the states in the postgresql database during tests. Easy way to turn what Rails calls “transactional_fixtures” in non-rails ActiveRecord projects.
+
+- **Rails-controller-testing:** assigns controller tests and assert_template to the controller and integration tests 
+
+- **Shoulda-matchers:** assists the Rspec gem. Provides one-liners to test common functionality to save lots of coding time. Tests the associations and validations (particularly used in the post testing). 
+
+- **Faker:** Generates fake data. Used in the seed file to create posts in the database with pre-filled dummy data. 
+ 
+ ### Frontend
+
+- **react ^16.13.1:** A Javascript Front-end library. Used to build the user interfaces and UI components in this application. Accompanied by the react library. 
+complimentary react libraries.
+
+- **react-dom ^16.13.1:** A complimentary library to react that binds react to the DOM. This enables methods such as render() to render components in the browser.
+
+- **react-router-dom ^5.2.0:** To build single-page application and conditional rendering of components. It is based on the route being used in the URL. Allowed for building a SPA that acts like a site with multiple pages.
+
+- **react-scripts 3.4.1:** A script to run build tools required to transform React and JSX syntax into plain Javascript. Used to create a custom build script for the staging environment of the application.
+
+- **axios ^0.19.2:** Axios is a Javascript library used to make HTTP requests to the backend API. Posts and auth each use axios to make HTTP requests to each dedicated api end points on the server side. 
+
+- **Emotion/react & styled ^11.10.5:** Allows for writing CSS style with 
+Javascript for object and string styles. It is powerful and predictable style composition to provide features such as labels and testing utilities. Allows for easy rendering, supports nested selectors, media queries and auto-prefixing. 
+
+- **mui/material ^5.10.13:** Allows to build a design system based on Material Design. It is a comprehensive library of components that are lightweight CSS frameworks that are pre-built and ready to use. 
+
+- **Web-vitals ^2.1.4:** Gem used to show how the pages perform based on real world usage data. It assists in seeing the ‘page experiences’ and overall UX. Provides a way of judging whether the elements are good or poor placements. and quantifies the measurement for page speed and user interactions. 
+
+
 ---
 
 ## Screenshots:
@@ -100,6 +196,9 @@ password: admin123
 ---
 
 ## Project Management
+
+**Project management:** Trello, Discord, Loom Videos
+
 The project managment tool we've used to track our progress for this assesment is [Trello, which can be viewed here.](https://trello.com/b/g94algv7/t3a2-full-stack-app) We have 10 columns in our board, each of which contribute to an agile approach of product development.
 
 1. **Blocked** Tasks which we are unable to continue with without further follow up. 
