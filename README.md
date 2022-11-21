@@ -4,7 +4,7 @@
 --- 
 📣 Deployed App: 
 
-🛠 Staging Environment App: 
+🔔 Deployed Backend: https://gluten-free-finder-api.herokuapp.com/
 
 🖥 Frontend Repo: https://github.com/sofia-frugone/Gluten-Free-Finder-React
 
