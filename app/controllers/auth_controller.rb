@@ -12,7 +12,7 @@ class AuthController < ApplicationController
     end
 
     def signup
-        user = User.create(auth_params )
+        user = User.create(auth_params)
         unless user.errors.any?
             token = JwtService.encode(user)
             render json: {jwt: token, email:user.email, role:user.role} , status: 201
