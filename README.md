@@ -4,7 +4,7 @@
 --- 
 📣 Deployed App: 
 
-🛠 Staging Environment App: 
+🔔 Deployed Backend: https://gluten-free-finder-api.herokuapp.com/
 
 🖥 Frontend Repo: https://github.com/sofia-frugone/Gluten-Free-Finder-React
 
@@ -125,8 +125,8 @@ The API Backend tested using the following:
 - Rspec (please see rspec files) with 45 examples, 0 failures
 - CLIENT HTTP (please see client.http file), 13 examples, 0 failures
   
-Screen Recordings of Evidence of Testing:
-Live Production Loom
+<!-- Screen Recordings of Evidence of Testing:
+Live Production Loom -->
 ---
 
 ## Libraries & Dependencies:
@@ -241,10 +241,154 @@ The project managment tool we've used to track our progress for this assesment i
 9. **Questions** Similar to our discuss column however we added this board to help us visually.
 10. **Resources** Any resources we want to keep during our development process. For quick reference.
 
- ![Trello-Board-1](./img/trello-1.png)
+### Methodology 
 
- ![Trello-Board-2](./img/trello-2.png)
+Our approach to this project was to separate it into sprints to tackle each aspect of its features. We chose to work in sync on features by detaching the project's backend and front end. This accommodated our working styles as each group member could work on the areas that suited their strengths. Early on, we recognised our strengths and decided that Megan was to work on the backend API, and Sofia worked on the front end. Through each sprint, we kept up regular communication via discord to understand what each person was up to and what was required for the project. This was significantly important when it came to our data calls. Our sprint planning was documented on our Trello board, where we could visually see what each of us were working on and towards each sprint. Our sprint reviews, which took place after each sprint, allowed us to work through errors, testing, and documentation. At the same time, the sprints themselves allowed us to work independently and methodically on the project. 
+
+
+In phase one, we undertook market research with our client and other stakeholders to understand what the application required. This helped us determine design choices for user flow, user aesthetics, search and data storage requirements. This is also where we developed our Trello board, as we used the user stories to project manage the tasks that lay ahead effectively. Each user story outlined the functions required for both the frontend and backend sprints. Through vigorous discussion and decision-making, we were able to use the story to paint the picture of the tasks and prioritise them into the most important ones to complete first. 
+
+
+In the first few days, we decided to pair-programme as starting appeared to be the most challenging, where we decided to separate the frontend and backend to suit our working styles. We wanted to solidify our skills, so we leaned on each other's strengths to help guide each other through the tough jobs. We could partake in critical and independent decision-making by splitting the project into the backend and frontend. In addition, it allowed for us to take ownership over each part of the project. Dividing the project into frontend and backend also allowed us to delegate each task and the tests. It also made merge requests easier, as we each owned a repository and never merged a PR on each other without discussion first. This ultimately reduced our merge conflicts. Once we got to the point of data calls, we switched to pair programming and worked on the project together. This may have slowed our progress, but it allowed us to step through each section of the challenges together. 
+
+
+Our first two sprints allowed us to complete much of the project, allowing time to focus on working through issues (in particular data calls) and any further feature requests or suggestions from our client. We used recorded Loom videos after each sprint to effectively reduce the length of video calls and communicate to the other team members what was completed and what was still to be completed.
+
+
+Each task on the Trello board was worked through according to their prioritisation. We chose not to give them due dates but to work through them progressively in a step-by-step manner. Each sprint fell through an unconventional working week - Megan worked longer weekends, whereas Sofia worked longer hours on Mondays & Tuesdays. This allowed the back end to be a few steps ahead of the front end, easing the pressure of creating data calls between the frontend and API. 
+
+
+At the end of each sprint, we checked what had been completed on the Trello tasks and marked them done or moved them into the sprint backlog. This mainly occurred when we ran into problems with our data call formatting from the frontend to the back nd, which was more complex than we expected. 
+
+
+### Trello
+Our Trello’s were labelled with colour coding, which helped us understand each task's requirements and difficulty level quickly. 
+
+
+
+Our labels were separated according to the following: 
+
+- Who used the feature? User/Admin/Restaurant
+
+- Who must undertake the task? frontend/backend/UX/UI
+
+- What sprint? Sprint 1/2/3/4
+
+- Priority level? Low, medium, high.
+
+We are big list makers! And utilised Trello as a way of checking off our lists. Most tasks fell under both frontend and backend, but separating each Trello allowed us to see who was undertaking the task in different project stages. 
+
+Our Trello cards were split in the following sprints: 
+
+**Sprint 1**
+
+Backend: 
+
+- Set up models, controllers and basic testing.
+
+- Login functionality and authorisation.
+
+- Overcoming git and finding our groove with a git-flow. 
+
+
+Frontend:
+
+- The important navbar and searching components.
+
+- Login functionality.
+
+- Overcoming git and finding our groove with a git-flow. 
+
+
+
+**Sprint 2**
+
+Backend:
+
+- CRUD functionality. 
+
+- Testing began. 
+
+- Seeding database.
+
+- Routing.
+
+
+
+Frontend:
+
+- Basic Material-UI components for design.
+
+- Footer styling. 
+
+- Error handling. 
+
+- Form components.
+
+
+
+Sprint 3
+
+Backend: 
+
+- Continue seeding database, with implementing roles for admin access. 
+
+- Working through more testing and Postman calls. 
+
+
+
+Frontend: 
+
+- Continue overall design for the front end of the app.
+
+- Filtering 
+
+- Routing and card functionality. 
+
+
+
+Sprint 4
+
+Frontend:
+
+- Data calls slowed us down as we didn’t have any experience.
+
+
+Backend:
+
+- Active storage
+- s3 bucket and credentials. 
+- Cors functionality.
+
+
+
+**Sprint 5**
+
+Backend: 
+
+- Deployment. 
+
+- Address any unexpected issues and tidying. 
+
+
+
+Frontend:
+
+- Admin access and blocking user access to the ability to publish their posts.
+
+- Deployment
+
+- Address any unexpected issues and tidying.
+
+- Testing for frontend and client testing.
+
+
+![Trello-Board-1](./img/trello1.png)
+![Trello-Board-2](./img/trello2.png)
+![Trello-Board-2](./img/trello3.png)
+![Trello-Board-2](./img/trello4.png)
+![Trello-Board-2](./img/trello5.png)
+![Trello-Board-2](./img/trello6.png)
+![Trello-Board-2](./img/trello7.png)
+![Trello-Board-2](./img/trello8.png)
  
-
---- 
-## Reflection 
