@@ -21,11 +21,6 @@ if User.count == 0
     puts "created user"
 end
 
-User.create(email: 'admin@glutenfreefinder.com',
-    password: 'admin123',
-    password_confirmation: 'admin123',
-    role: User.roles[:admin])
-
 if Post.count == 0
     15.times do
         Post.create!(
@@ -45,3 +40,8 @@ end
 
 Post.fourth.image.attach(io: File.open(File.join(Rails.root,"app/assets/images/cafe1.jpeg")), filename: 'cafe1')
 Post.third.image.attach(io: File.open(File.join(Rails.root,"app/assets/images/cafe1.jpeg")), filename: 'cafe1')
+
+User.create(email: 'admin@glutenfreefinder.com',
+    password: 'admin123',
+    password_confirmation: 'admin123',
+    role: User.roles[:admin])
