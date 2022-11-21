@@ -53,7 +53,6 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'rails-controller-testing'
   gem 'shoulda-matchers'
-  gem 'faker'
 end
 
 group :development do
