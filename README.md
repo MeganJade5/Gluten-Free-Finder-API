@@ -124,6 +124,11 @@ These Testing Logs include the following pages:
 The API Backend tested using the following:
 - Rspec (please see rspec files) with 45 examples, 0 failures
 - CLIENT HTTP (please see client.http file), 13 examples, 0 failures
+- Postman examples:
+  ![Trello-Board-2](./img/postman1.png)
+  ![Trello-Board-2](./img/postman2.png)
+  ![Trello-Board-2](./img/postman3.png)
+    ![Trello-Board-2](./img/postman4.png)
   
 <!-- Screen Recordings of Evidence of Testing:
 Live Production Loom -->
@@ -203,10 +208,9 @@ complimentary react libraries.
 - **Emotion/react & styled ^11.10.5:** Allows for writing CSS style with 
 Javascript for object and string styles. It is powerful and predictable style composition to provide features such as labels and testing utilities. Allows for easy rendering, supports nested selectors, media queries and auto-prefixing. 
 
-- **mui/material ^5.10.13:** Allows to build a design system based on Material Design. It is a comprehensive library of components that are lightweight CSS frameworks that are pre-built and ready to use. 
-
 - **Web-vitals ^2.1.4:** Gem used to show how the pages perform based on real world usage data. It assists in seeing the ‘page experiences’ and overall UX. Provides a way of judging whether the elements are good or poor placements. and quantifies the measurement for page speed and user interactions. 
 
+- **Tanstack:** libraries for managing server state. It wrangles all forms of async data in React without touching any "global state". Utilities usd for complex workflows like Data Management, Data Visualization, Charts, Tables, and UI Components.
 
 ---
 
@@ -275,6 +279,8 @@ Our labels were separated according to the following:
 - What sprint? Sprint 1/2/3/4
 
 - Priority level? Low, medium, high.
+
+![Trello-Board-2](./img/trello9.png)
 
 We are big list makers! And utilised Trello as a way of checking off our lists. Most tasks fell under both frontend and backend, but separating each Trello allowed us to see who was undertaking the task in different project stages. 
 
