@@ -13,6 +13,6 @@ Rails.application.routes.draw do
   put "/posts/:id", to: "posts#update"
   patch "/posts/:id", to: "posts#update"
   delete "/posts/:id", to: "posts#destroy"
-  post "/auth/signin", to: "auth#signin", as: "signin"
+  get "/auth/signin", to: "auth#signin", as: "signin"
   post "/auth/signup", to: "auth#signup", as: "signup"
 end
