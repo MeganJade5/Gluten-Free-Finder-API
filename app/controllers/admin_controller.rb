@@ -3,7 +3,7 @@ class AdminController < ApplicationController
   before_action :authorize, only: [:show, :update, :destroy]
 
   def index
-    posts = Post.all.includes(:user, :cuisine, :food_prep)
+    posts = Post.where(live_status: false)
     render json: posts, include: {cuisine: {only: :name}, food_prep: {only: :name}, user: {only: :email}}, status: 200
   end
 
