@@ -4,7 +4,7 @@ class PostsController < ApplicationController
     before_action :authorize, only: [:update, :destroy]
 
 def index
-    posts = Post.all.includes(:user, :cuisine, :food_prep)
+    posts = Post.where(live_status: true)
     posts = posts.map do |post|
         post_hash = post.attributes
         post_hash[:cuisine] = post.cuisine.name

@@ -2,7 +2,7 @@ class JwtService
     @secret = Rails.application.credentials.dig(:secret_key_base)
 
     def self.encode(user)
-        payload = {user_id: user.id, exp: 1.hour.from_now.to_i}
+        payload = {user_id: user.id, exp: 1.hour.from_now.to_i, role: user.role}
         token = JWT.encode(payload, @secret)
     end
 
