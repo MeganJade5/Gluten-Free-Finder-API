@@ -4,7 +4,7 @@ class AdminController < ApplicationController
 
   def index
     posts = Post.where(live_status: false)
-    render json: posts, include: {cuisine: {only: :name}, food_prep: {only: :name}, user: {only: :email}}, status: 200
+    render json: {posts: posts}, status: 200
   end
 
   def posts
