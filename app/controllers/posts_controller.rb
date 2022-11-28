@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
     before_action :set_post, only: [:show, :update, :destroy]
-    before_action :authenticate, only: [:create, :updated, :destroy]
+    before_action :authenticate, only: [:create, :update, :destroy]
     before_action :authorize, only: [:update, :destroy]
 
 def index
@@ -28,7 +28,7 @@ end
 
     def update
         @post.update(post_params)
-        render_post(post)
+        render_post(@post)
     end
 
     def destroy
@@ -48,12 +48,11 @@ end
     end
 
     def post_params
-        params.permit(:restaurant_name, :street_number, :street_name, :suburb, :postcode, :description, :cuisine_id, :food_prep_id, :live_status, :image)
+        params.permit(:restaurant_name, :street_number, :street_name, :suburb, :postcode, :description, :cuisine_id, :food_prep_id, :live_status)
     end
 
-    # change this to admin
     def authorize
-        render json: {error: "You don't have permission to do that"}, status: 401 unless current_user.id == @post.user_id
+        render json: {error: "You don't have permission to do that"}, status: 401 unless current_user.admin?
     end
 
     def render_post(post, status=200)
