@@ -2,7 +2,7 @@
 ## Megan Van Der Weide & Sofia-Bella Frugone
 
 --- 
-📣 Deployed App: 
+📣 Deployed App: https://amazing-genie-cf79c0.netlify.app
 
 🔔 Deployed Backend: https://gluten-free-finder-api.herokuapp.com/
 
@@ -68,7 +68,7 @@ Installing React:
 Installing package.json:
 
 - Ensure you have installed npm
-
+- NPM installs devDependencies within the package. json file. The 'npm install' command should add all the dependencies and devDependencies automatically during installation.
   
 Clone the app: 
 - Create a directory on your machine named `Gluten-Free-Finder` and `$ cd` into it.
@@ -122,6 +122,7 @@ These Testing Logs include the following pages:
 4. [Frontend Test Logs](https://docs.google.com/spreadsheets/d/1c2GitubExcjdO2MHKTi4ZNrZ8e27vQepE55oi4mlJDE/edit#gid=1587885359)
 
 The API Backend tested using the following:
+
 - Rspec (please see rspec files) with 45 examples, 0 failures
 - CLIENT HTTP (please see client.http file), 13 examples, 0 failures
 - Postman examples:
@@ -137,7 +138,7 @@ Live Production Loom -->
 ## Libraries & Dependencies:
 
 ### Stack
-**Front-end:** HTML, CSS, JavaScript, React, JSX, Material UI
+**Front-end:** HTML, CSS, JavaScript, React, JSX
 
 **Back-end:** Rails, Ruby
 
@@ -205,22 +206,33 @@ complimentary react libraries.
 
 - **axios ^0.19.2:** Axios is a Javascript library used to make HTTP requests to the backend API. Posts and auth each use axios to make HTTP requests to each dedicated api end points on the server side. 
 
-- **Emotion/react & styled ^11.10.5:** Allows for writing CSS style with 
-Javascript for object and string styles. It is powerful and predictable style composition to provide features such as labels and testing utilities. Allows for easy rendering, supports nested selectors, media queries and auto-prefixing. 
+- **jwt-decode ^3.1.2:** Decode JWT tokens, mostly useful for browser applications.
 
-- **Web-vitals ^2.1.4:** Gem used to show how the pages perform based on real world usage data. It assists in seeing the ‘page experiences’ and overall UX. Provides a way of judging whether the elements are good or poor placements. and quantifies the measurement for page speed and user interactions. 
+- **Web-vitals ^2.1.4:** Gem used to show how the pages perform based on real world usage data. It assists in seeing the ‘page experiences’ and overall UX. Provides a way of judging whether the elements are good or poor placements. and quantifies the measurement for page speed and user interactions.
 
-- **Tanstack:** libraries for managing server state. It wrangles all forms of async data in React without touching any "global state". Utilities usd for complex workflows like Data Management, Data Visualization, Charts, Tables, and UI Components.
+- **Tanstack ^4.16.1:** libraries for managing server state. It wrangles all forms of async data in React without touching any "global state". Utilities usd for complex workflows like Data Management, Data Visualization, Charts, Tables, and UI Components.
+
+- **React-Toastify ^9.1.1:** This tool allows you to easily add and configure toast notifications for your app.
 
 ---
 
 ## Screenshots:
 **Homepage**
+![homepage](./img/homepage.png)
 **Restaurant Post**
+![Restaurant Post](./img/restaurant-post.png)
 **Sign up**
+![sign up](./img/signup.png)
 **Sign in**
+![sign in](./img/signin.png)
 **Create New Post**
+![new post](./img/create-new-post.png)
 **Admin Dashboard**
+![admin](./img/admin-dashboard.png)
+**Moderation**
+![moderation](./img/moderation.png)
+**Search**
+![search](./img/search.png)
 ---
 
 ## Project Management
@@ -228,7 +240,10 @@ Javascript for object and string styles. It is powerful and predictable style co
 **Git Source Control**
 
 Frontend: https://github.com/sofia-frugone/Gluten-Free-Finder-React/pulse
+
+
 Backend: https://github.com/MeganJade5/Gluten-Free-Finder-API/pulse
+
 
 **Project management tools:** Trello, Discord, Loom Videos
 
@@ -263,6 +278,12 @@ Each task on the Trello board was worked through according to their prioritisati
 
 
 At the end of each sprint, we checked what had been completed on the Trello tasks and marked them done or moved them into the sprint backlog. This mainly occurred when we ran into problems with our data call formatting from the frontend to the back nd, which was more complex than we expected. 
+
+
+Our PART A documentation included some features that we unfortunately didn't have time for due to time constraints. The main features being image upload and a checkbox on the sign up page where users could specify that they were a restaurant. Due to the complexity of image uploads we decided to make the call to put this time and effort into refining the user experience in the app, image upload functionality is a time consuming feature that we would love to implement in the future when we have more time to get it right. We still wanted to display an image on our site for our restaurant cards so we went with a placeholder image instead.
+
+
+The checkbox for the sign up page was for users to specify that they were a restaurant user opposed to a regular user. We did not plan to have a user dashboard or display the users role anywhere so we decided that this was unnecessary as the core app functionality is accessible even if a user does not sign up to the app. Therefore a user who signs up to the site is assumed to be a restaurant user looking to access the submission form functionality.
 
 
 ### Trello
@@ -323,7 +344,7 @@ Backend:
 
 Frontend:
 
-- Basic Material-UI components for design.
+- Basic css styling and general component layout using flexbox css. 
 
 - Footer styling. 
 
@@ -333,7 +354,7 @@ Frontend:
 
 
 
-Sprint 3
+**Sprint 3**
 
 Backend: 
 
@@ -346,6 +367,10 @@ Backend:
 Frontend: 
 
 - Continue overall design for the front end of the app.
+  
+- JWT tokens
+
+- Conditional rendering of components and authorisation logic.
 
 - Filtering 
 
@@ -353,7 +378,7 @@ Frontend:
 
 
 
-Sprint 4
+**Sprint 4**
 
 Frontend:
 
