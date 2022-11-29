@@ -284,8 +284,10 @@ Our PART A documentation included some features that we unfortunately didn't hav
 
 Due to the complexity of image uploads we decided to make the call to put this time and effort into refining the user experience in the app, image upload functionality is a time consuming feature that we would love to implement in the future when we have more time to get it right. We still wanted to display an image on our site for our restaurant cards so we went with a placeholder image instead.
 
-
 The checkbox for the sign up page was for users to specify that they were a restaurant user opposed to a regular user. We did not plan to have a user dashboard or display the users role anywhere so we decided that this was unnecessary as the core app functionality is accessible even if a user does not sign up to the app. Therefore a user who signs up to the site is assumed to be a restaurant user looking to access the submission form functionality.
+
+
+Our client is so satisfied with the final product that they are already discussing possible future projects - such as including location and maps which will connect the user to nearby restaurants according to their location. 
 
 
 ### Trello
